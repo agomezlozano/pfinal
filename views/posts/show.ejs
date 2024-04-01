@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= post.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <% if (post.attachment) { %>
+        <img src="<%= post.attachment.url %>" alt="Post image">
+    <% } %>
+    <a href="/posts/<%= post.id %>/edit">Editar</a>
+    <form action="/posts/<%= post.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit">Borrar</button>
+    </form>
+</body>
+</html>
